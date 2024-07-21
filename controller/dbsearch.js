@@ -1,6 +1,7 @@
 import Inputdata from "../models/inputmodel.js";
 
 const dbsearchController = async (req, res) => {
+    const date0 = Date.now();
     const date1 = new Date();
     const date2 = new Date();
 
@@ -13,7 +14,11 @@ const dbsearchController = async (req, res) => {
               $lte: date2
             }
           })
-        return res.status(200).json(data);
+        // const data = await Inputdata.find({});
+        console.log(data);
+        const date3 = Date.now();
+        const timetaken = date3-date0;
+        return res.status(200).json({"Data": data, "Time Taken in seconds": timetaken/1000});
     }catch(error){
         console.log(error)
         return res.status(401).json("Error fetching data!")

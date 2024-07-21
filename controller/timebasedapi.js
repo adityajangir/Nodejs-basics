@@ -8,7 +8,7 @@ const timebasedapiController = (req, res) => {
     if(todayday == 1){
         return res.status(401).json("Please do not use this api on monday");
     }
-    if(currentdateandtime.getHours() >=8 && currentdateandtime.getHours() < 16){
+    if(currentdateandtime.getHours() >=8 && currentdateandtime.getHours() < 15){
         return res.status(401).json("Please try after 3pm");
     }
     try{

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.post('/db-save', rateLimiter, dbsavecontroller)
 
-router.get('/time-based-api', timebasedapiController)
+router.post('/time-based-api', timebasedapiController)
 
 router.get('/db-search', dbsearchController);
 
